@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Jeu Pays des Glaces</title>
+    <meta charset="utf-8" />
+    <style>
+      
+/*Ici on parametre les breakpoint pour la page du jeu et des elements : glaces, sprite e lien pour le CV. Je vais faire 1 breakpoint avec un max-width: 400px*/
+    
+       @media (max-width: 400px) {
+            #gcta1 {
+                top: 360px;
+                left: 245px;
+                position: absolute;
+                max-width: 4%;
+                min-width: 3%;
+            }
+            #ciliegia2 {
+                top: 275px;
+                position: absolute;
+                left: 350px;
+                width: 3%;
+            }
+            #coppetta3 {
+                top: 140px;
+                left: 455px;
+                position: absolute;
+                width: 5%;
+            }
+            #smileciliegia4 {
+                top: 250px;
+                position: absolute;
+                left: 620px;
+                width: 3%;
+            }
+            #colori5 {
+                top: 175px;
+                position: absolute;
+                left: 788px;
+                width: 4%;
+            }
+            #italia6 {
+                top: 125px;
+                left: 900px;
+                position: absolute;
+                width: 3%;
+            }
+        }
+/*CSS ID du masque du sprite et du paysage*/
+
+        #masque {
+            top: 300px;
+            height: 112px;
+            overflow: hidden;
+            position: absolute;
+            width: 108px;
+        }
+        #sprite {
+            top: 0px;
+            position: absolute;
+        }
+        #paydeg {
+            width: 100%;
+        }
+
+/*CSS ID des glaces*/
+
+        #coll1 {
+            display: flex;
+            justify-content: center;
+            top: 320px;
+            left: 220px;
+            width: 90px;
+            height: 90px;
+            position: absolute;
+        }
+        #coll2 {
+            top: 250px;
+            left: 320px;
+            position: absolute;
+        }
+        #coll3 {
+            top: 130px;
+            left: 435px;
+            position: absolute;
+        }
+        #coll4 {
+            top: 210px;
+            left: 600px;
+            position: absolute;
+        }
+        #coll5 {
+            top: 160px;
+            left: 740px;
+            position: absolute;
+        }
+        #coll6 {
+            top: 100px;
+            left: 850px;
+            position: absolute;
+        }
+
+/*CSS ID du score et des competences*/
+
+        #score {
+            background-color: rgb(250, 244, 244);
+            top: 70px;
+            left: 1030px;
+            border-radius: 8px;
+            text-align: center;
+            position: absolute;
+            font-size: 20px;
+            max-width: 100px; /* Taille maximale */
+            width: 8%;
+            height: auto;  /*Maintient le ratio d'aspect */
+        }
+
+        #comp1 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 100px;
+            left: 990px;
+            max-width: 100px; /* Taille maximale */
+            width: 10%; 
+            height: auto;  /*Maintient le ratio d'aspect */
+        }
+        #comp2 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 98px;
+            left: 1060px;
+            max-width: 100px; /* Taille maximale */
+            width: 10%; 
+            height: auto; /* Maintient le ratio d'aspect */
+        }
+        #comp3 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 100px;
+            left: 1120px;
+            max-width: 100px; /* Taille maximale */
+            width: 10%; 
+            height: auto; /* Maintient le ratio d'aspect */
+        }
+        #comp4 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 130px;
+            left: 990px;
+            max-width: 100px; /* Taille maximale */
+            width: 10%; 
+            height: auto; 
+        } 
+        #comp5 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 130px;
+            left: 1065px;
+            max-width: 100px;
+            width: 10%; 
+            height: auto; 
+        }
+        #comp6 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 130px;
+            left: 1120px;
+            max-width: 100px; 
+            width: 10%; 
+            height: auto; 
+        }
+        #comp7 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 170px;
+            left: 990px;
+            max-width: 100px; /* Taille maximale */
+            width: 10%; 
+            height: auto; 
+        }
+        #comp8 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 170px;
+            left: 1060px;
+            max-width: 100px; /* Taille maximale */
+            width: 10%; 
+            height: auto; /* Maintient le ratio d'aspect */
+        }  
+        #comp9 { 
+            display: none; /* Masqué par défaut */
+            position: absolute;
+            top: 180px;
+            left: 1120px;
+            max-width: 100px; /* Taille maximale */
+            width: 10%; 
+            height: auto; /* Maintient le ratio d'aspect */
+        }  
+/*CSS CLASSES des glaces*/  
+
+        .gcta1 {
+            width: 60%;
+        }
+        .ciliegia2 {
+            width: 50%;
+        }
+        .coppetta3 {
+            width: 25%;
+        }
+        .smileciliegia4 {
+            width: 40%;
+        }
+        .colori5 {
+            width: 50%;
+        }
+        .italia6 {
+            width: 50%;
+        }
+
+/*CSS CLASSES des competences et du CV .cfigma, .cjira, .ckam, .chtml, .ccss, .cbootstrap, .cgit, .cangular {
+    width: 50%;
+}*/    
+
+   
+        .cfigma{
+            width: 50%; 
+        }
+        .cjira{
+            width: 50%;
+        }
+        .ckam{
+            width: 50%;
+        }
+        .chtml{
+            width: 20%;
+        }
+        .ccss{
+            width: 25%;
+        }
+        .cbootstrap{
+            width: 40%;
+        }
+        .cgit{
+            width: 30%;
+        } 
+        .cjs{
+            width: 22%;
+        }
+        .cangular{
+            width: 50%;
+        }        
+        .cv {
+            position: absolute;
+            top: 220px;
+            left: 1070px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+  </head>  
+
+  <body>
+    <div id="fondo">
+      <div id="paydesglaces"><img src="lepaydeglacessansCV.png"/>  
+        <div id="coll1"><img id="img1" src="gcta.png"  class="gcta1" alt="comptence1"> 
+        </div>  
+        <div id="coll2"><img src="gciliegia.png"  class="ciliegia2" alt="comptence2"> 
+        </div>
+        <div id="coll3"><img src="gcoppetta.png" class="coppetta3" alt="comptence3"> 
+        </div>
+        <div id="coll4"><img src="gsmile.png" class="smileciliegia4" alt="comptence4"> 
+        </div>
+        <div id="coll5"><img src="gcolori.png" class="colori5" alt="comptence5"> 
+        </div>
+        <div id="coll6"><img src="gitalia.png" class="italia6" alt="comptence6"> 
+        </div> 
+        <div id="score">Score : O
+        </div>
+        <div id="comp1"><img class="cfigma" src="figma.png"/> 
+        </div>
+        <div id="comp2"><img class="cjira" src="jira.png"/> 
+        </div>
+        <div id="comp3"><img class="ckam" src="kameleoon.png"/> 
+        </div>
+        <div id="comp4"><img class="chtml" src="html.png"/> 
+        </div>
+        <div id="comp5"><img class="ccss" src="css.png"/> 
+        </div>
+        <div id="comp6"><img class="cbootstrap" src="bootstrap.png"/> 
+        </div>
+        <div id="comp7"><img class="cgit" src="github.png"/> 
+        </div>
+        <div id="comp8"><img class="cjs" src="js.png"/> 
+        </div>
+        <div id="comp9"><img class="cangular" src="angular.png"/> 
+        </div>
+        <div class="cv"><a href="cvdfs.pdf">CV</a>
+        </div>      
+      </div>
+    </div>        
+      <div id="avatar">
+        <div id="masque"><img id="sprite" src="pinguino.png"/>        
+      </div>      
+    <script src="testinterazioni.js"></script> 
+  </body>
+</html>
